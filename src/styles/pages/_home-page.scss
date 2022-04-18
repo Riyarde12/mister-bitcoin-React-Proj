@@ -1,0 +1,14 @@
+.home-page {
+    // max-width: 1180px;
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    color: #ece7e7d6;
+    margin-top: 50px;
+    // box-shadow: 1px 1px 10px 0px gray;
+    // color: rgba(255, 255, 255, 0.903);
+    > * {
+        margin-bottom: 50px;
+        // margin-left: 10px;
+    }
+}

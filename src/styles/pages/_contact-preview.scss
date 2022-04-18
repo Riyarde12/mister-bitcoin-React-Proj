@@ -1,0 +1,36 @@
+.contact-preview {
+    background-size: 150px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    .card-container {
+        display: flex;
+        // flex-direction: row-reverse;
+        // flex-direction: column;
+        div {
+            height: 100px;
+            background-size: 150px;
+            background-repeat: no-repeat;
+        }
+        button {
+            width: 100px;
+            height: 64px;
+            margin-right: 20px;
+        }
+        .edit-link {
+            cursor: pointer;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            border: none;
+            color: #ece7e7d6;
+            border: 1px solid #ece7e7d6;
+            border-radius: 30px;
+            background-color: #041222;
+            width: 100px;
+            height: 64px;
+        }
+    }
+}

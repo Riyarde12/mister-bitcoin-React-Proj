@@ -1,0 +1,69 @@
+.grid {
+    display: grid;
+}
+
+.clean-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.flex-start {
+    justify-content: flex-start;
+}
+
+.under-line {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.sticky {
+    position: sticky;
+    top: 40px;
+}
+
+.btn {
+    cursor: pointer;
+    margin: 0px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.header-recognaizer {
+    padding-top: 135px;
+}
+
+.max-height {
+    height: 100%;
+}
+
+.flex.culumn {
+    flex-direction: column;
+}
+
+.under-line {
+    text-decoration: underline;
+}
+
+.fixed {
+    position: fixed;
+}

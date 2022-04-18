@@ -1,0 +1,13 @@
+.app-header {
+    font-size: 2rem;
+
+    background-color: #041222;
+    & :first-child {
+        margin-left: 10%;
+        margin-right: 10px;
+    }
+
+    a {
+        color: #ece7e7d6;
+    }
+}

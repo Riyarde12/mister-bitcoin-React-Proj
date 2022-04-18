@@ -1,0 +1,21 @@
+// BASE
+@import "./base/base";
+@import "./base/helpers";
+@import "./base/layout";
+
+// COMPONENTS
+@import "./components/contact-list";
+@import "./components/app-header";
+
+// PAGES
+@import "./pages/_home-page";
+@import "./pages/contact-preview";
+
+// APP
+
+.App {
+    background-color: #041222;
+    height: 100vh;
+    main.container {
+    }
+}
