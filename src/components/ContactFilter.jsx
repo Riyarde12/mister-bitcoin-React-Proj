@@ -25,10 +25,7 @@ export class ContactFilter extends Component {
                     <label htmlFor="searchBy">Search by Name / Phone</label>
                     <input onChange={this.handleChange} type="text" name="searchBy" id="searchBy" />
                 </section>
-                {/* <section>
-                    <label htmlFor="byPhoneNumber">Phone Number</label>
-                    <input onChange={this.handleChange} type="text" name="byPhoneNumber" id="byPhoneNumber" />
-                </section> */}
+
 
             </section>
         );

@@ -7,7 +7,9 @@ import { ContactPage } from "./pages/ContactPage";
 import { StatisticPage } from "./pages/StatisticPage";
 import { AppHeader } from "./components/AppHeader";
 import { ContactEditPage } from "./pages/ContactEditPage";
+import { SignupPage } from "./pages/SignupPage";
 // import backGround from './assets/imgs/home-page.jpg';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
             <Route path="/statistic/" component={StatisticPage} />
             <Route path="/contact/:id" component={ContactDetailsPage} />
             <Route path="/contact/" component={ContactPage} />
+            <Route path={"/signup/"} component={SignupPage} />
             <Route path="/" component={HomePage} />
           </Switch>
         </main>

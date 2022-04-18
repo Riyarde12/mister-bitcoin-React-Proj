@@ -1,15 +1,20 @@
 import { Component } from "react";
+import { connect } from "react-redux";
 import { contactService } from "../services/contactService";
 import { Link } from "react-router-dom";
+import { TransferFund } from "../components/TransferFund";
+import { loadLoggedInUser, spendCoins } from "../store/actions/userActions";
 
-export class ContactDetailsPage extends Component {
+class _ContactDetailsPage extends Component {
 
     state = {
         contact: null,
+        transferAmount: null,
     };
 
     componentDidMount() {
         this.loadContact();
+        this.props.loadLoggedInUser();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -31,12 +36,27 @@ export class ContactDetailsPage extends Component {
         }
     };
 
+
+    handleChange = async ({ target }) => {
+        const field = target.name;
+        const value = target.type === 'number' ? (+target.value || '') : target.value;
+        this.setState({ [field]: value });
+    };
+
+    onTransferCoins = (ev) => {
+        ev.preventDefault();
+        const { transferAmount } = this.state;
+        this.props.spendCoins(transferAmount);
+    };
+
     onBack = () => {
         this.props.history.push('/contact/');
     };
 
     render() {
         const { contact } = this.state;
+        const { loggedInUser } = this.props;
+        console.log('loggedInUser', loggedInUser);
         if (!contact) return <div>Loading...</div>;
         return (
             <section className="contact-detail">
@@ -44,13 +64,27 @@ export class ContactDetailsPage extends Component {
                     <h2>Name: {contact.name}</h2>
                     <h2>Phone: {contact.phone}</h2>
                     <h2>Email: {contact.email}</h2>
+                    <section>
+                        <button onClick={this.onBack}>Back to contacts list</button>
+                        <Link to={`/contact/edit/${contact._id}`}>Edit contact</Link>
+                    </section>
+                    <TransferFund contact={contact} maxCoins={loggedInUser.coins}
+                        onTransferCoins={this.onTransferCoins} handleChange={this.handleChange} />
                 </main>
-                <section>
-                    <button onClick={this.onBack}>Back to contacts list</button>
-                    <Link to={`/contact/edit/${contact._id}`}>Edit contact</Link>
-                    {/* <Link to='/contact/..'>Next contact</Link> */}
-                </section>
             </section>
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        loggedInUser: state.userModule.loggedInUser
+    };
+};
+
+const mapDispatchToProps = {
+    loadLoggedInUser,
+    spendCoins,
+};
+
+export const ContactDetailsPage = connect(mapStateToProps, mapDispatchToProps)(_ContactDetailsPage);
